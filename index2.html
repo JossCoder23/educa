@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUCP - Open Educa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-blue: #0A2240;
+            --color-orange: #F57F00;
+            --color-white: #FFFFFF;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #e5e5e5; /* Fondo gris oscuro para ver los límites en escritorio */
+        }
+
+        /* Contenedor principal que simula el ancho del móvil */
+        .mobile-wrapper {
+            width: 100%;
+            max-width: 480px; 
+            margin: 0 auto;
+            background-color: var(--color-white); /* Fondo blanco general para el resto de la web */
+            min-height: 100vh;
+        }
+
+        /* 
+         * BLOQUE 1: BANNER PRINCIPAL (HERO)
+         * Ahora su altura depende de su contenido interno (padding) y no del 100vh
+         */
+        .hero-banner {
+            width: 100%;
+            /* Ruta a tu imagen de fondo de los estudiantes */
+            background-image: url('top-new.png'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-repeat: no-repeat;
+        }
+
+        /* Logo superior */
+        .header-logo {
+            text-align: center;
+            padding-top: 2rem;
+            width: 100%;
+        }
+        
+        .header-logo img {
+            height: 40px;
+        }
+
+        /* Contenedor central (Formas) */
+        .hero-shapes-container {
+            position: relative;
+            width: 100%;
+            padding: 3.5rem 0; /* Define el espacio vertical para que la imagen de fondo se vea */
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* Tipografía de la caja azul */
+        .title-open {
+            color: var(--color-orange);
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .title-educa {
+            color: var(--color-white);
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-left: 1.5rem;
+        }
+
+        .date-container {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            color: var(--color-white);
+        }
+
+        .date-day {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -2px;
+        }
+
+        .date-details {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.8rem;
+        }
+
+        .date-month {
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .date-mode {
+            background-color: var(--color-orange);
+            color: var(--color-blue);
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 0.1rem 0.4rem;
+            margin-top: 0.2rem;
+            display: inline-block;
+        }
+
+        /* Banner naranja adjunto al fondo fotográfico */
+        .bottom-banner {
+            background-color: var(--color-orange);
+            border-top-right-radius: 3rem; 
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--color-white);
+            position: relative;
+            z-index: 10;
+        }
+
+        .bottom-banner p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .bottom-banner h3 {
+            color: var(--color-blue);
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-style: italic;
+            margin: 0.2rem 0;
+        }
+
+        .bottom-logo {
+            position: absolute;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            width: 45px;
+            height: 45px;
+        }
+        
+        .bottom-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* 
+         * BLOQUE 2: NUEVO CONTENIDO (Blanco)
+         */
+        .seccion-blanca {
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: var(--color-white);
+        }
+
+        /* Media Queries */
+        @media (max-width: 360px) {
+            .blue-shape { padding: 2rem 1rem 2rem 1.5rem; }
+            .title-open { font-size: 2.5rem; }
+            .title-educa { font-size: 2.8rem; margin-left: 1rem; }
+            .date-day { font-size: 2.8rem; }
+            .bottom-banner h3 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mobile-wrapper">
+        
+        <!-- =======================
+             INICIO DEL BANNER HERO 
+             ======================= -->
+        <section class="hero-banner">
+            
+            <header class="header-logo">
+                <img src="logo-pucp.png" alt="Logo PUCP">
+            </header>
+
+            <div class="hero-shapes-container">
+                <div>
+                    <h1 class="title-open">Open</h1>
+                    <h2 class="title-educa">Educa</h2>
+                    
+                    <div class="date-container">
+                        <span class="date-day">29</span>
+                        <div class="date-details">
+                            <span class="date-month">de agosto</span>
+                            <span class="date-mode">Presencial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        
+        <footer class="bottom-banner">
+            <p>Tu idea de estudiar</p>
+            <h3>Educación</h3>
+            <p>está a punto de cambiar</p>
+            
+            <div class="bottom-logo">
+                <img src="https://via.placeholder.com/50/ffffff/ffffff?text=Icon" alt="Icono inferior">
+            </div>
+        </footer>
+
+        <!-- =======================
+             SIGUIENTE BLOQUE (BLANCO)
+             ======================= -->
+        <section class="seccion-blanca">
+            <h2>Siguiente Sección</h2>
+            <p>Aquí puedes continuar agregando el resto de los bloques de tu diseño. El banner de arriba ya no empujará esto fuera de la pantalla.</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
