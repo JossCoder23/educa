@@ -1,6 +1,6 @@
 *{
     padding: 0;
-    font-family: "TTNorms", sans-serif;
+    font-family: "TTNorms2", sans-serif;
     margin: 0;
     box-sizing: border-box;
 }
@@ -9,11 +9,22 @@
     --azul: #042354;
     --azul-claro: #2841dd;
     --naranja: #fe8512;
+
+    --texto-96: clamp(2.5rem, 1.8rem + 3.5vw, 6rem);
+    --texto-72: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
+    --texto-69: clamp(1.88rem, 1.39rem + 2.44vw, 4.31rem);
+    --texto-40: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+    --texto-37: clamp(1.38rem, 1.19rem + 0.94vw, 2.31rem);
+    --texto-35: clamp(1.25rem, 1.06rem + 0.94vw, 2.19rem);
 }
 
 p, h1, h2, h3, h4, h5 {
     margin: 0;
     padding: 0;
+}
+
+.pucp-landing-wrapper {
+    position: relative;
 }
 
 .bloque1 {
@@ -189,7 +200,7 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .bloque3__data h2 {
-    font-size: 2.5rem;
+    font-size: var(--texto-96);
     font-weight: 500;
 }
 
@@ -200,7 +211,7 @@ p, h1, h2, h3, h4, h5 {
 
 .bloque3__data .subtitle {
     margin: 0;
-    font-size: 1.7rem;
+    font-size: var(--texto-69);
     font-weight: 300;
 }
 
@@ -210,7 +221,8 @@ p, h1, h2, h3, h4, h5 {
 }
 
 .bloque3__data p {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: var(--texto-35);
     font-weight: 300;
 }
 
@@ -225,7 +237,7 @@ p, h1, h2, h3, h4, h5 {
 
 .bloque3__fecha span {
     text-align: center;
-    font-size: 1rem;
+    font-size: var(--texto-35);
     display: flex;
     align-items: center;
     font-weight: 550;
@@ -254,20 +266,24 @@ p, h1, h2, h3, h4, h5 {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
+    height: auto;
+
+    min-height: fit-content;
+    height: fit-content;
 }
 
 .formulario h2 {
-    font-size: 1.2rem;
+    font-size: var(--texto-37);
     padding: 0;
     margin: 0;
-    line-height: 1.3rem;
+    line-height: 1.6rem;
     text-align: center;
     color: white;
     font-weight: 500;
 }
 
 .formulario h4 {
-    font-size: 1rem;
+    font-size: var(--texto-35);
     line-height: 1.3rem;
     text-align: center;
     color: white;
@@ -278,6 +294,7 @@ form {
     display: flex;
     flex-direction: column;
     row-gap: .8rem;
+    height: auto;
 }
 
 form .eleccion {
@@ -371,7 +388,7 @@ form .eleccion .form__election {
 }
 
 .bloque3__disclaimer__inner p {
-    font-size: 1.1rem;
+    font-size: var(--texto-35);
     font-weight: 500;
     text-align: center;
     color: white;
@@ -397,7 +414,7 @@ form .eleccion .form__election {
 }
 
 .bloque5Container .bloque5__title {
-    font-size: 2rem;
+    font-size: var(--texto-96);
     font-family: "Source Serif 4", serif;
     font-style: italic;
     line-height: 1.2;
@@ -471,7 +488,7 @@ form .eleccion .form__election {
 }
 
 .bloque5__title {
-    font-size: 2rem;
+    font-size: var(--texto-96);
     line-height: 1.2;
     font-family: "Source Serif 4", serif;
     font-style: italic;
@@ -493,10 +510,11 @@ form .eleccion .form__election {
 .bloque6Item__pregunta h4 {
     display: flex;
     align-items: center;
+    font-size: var(--texto-40);
 }
 
 .bloque6Item__pregunta span {
-    font-size: 2rem;
+    font-size: var(--texto-40);
     font-weight: 600;
     color: var(--naranja);
     display: inline-block; /* Necesario para que se pueda animar el giro */
@@ -512,6 +530,7 @@ form .eleccion .form__election {
 
 .bloque6Item__respuesta p {
     padding: 1rem 0 0 0;
+    font-size: var(--texto-37);
 }
 
 /* .close {
@@ -536,7 +555,7 @@ form .eleccion .form__election {
 .bloque7Container p {
     color: white;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: var(--texto-37);
     text-align: center;
 }
 
@@ -547,7 +566,7 @@ form .eleccion .form__election {
 
 .bloque7Container h4 {
     font-weight: 600;
-    font-size: 1.3rem;
+    font-size: var(--texto-40);
     color: white;
 }
 
@@ -559,7 +578,7 @@ form .eleccion .form__election {
     border-radius: 1.5rem;
     color: white;
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: var(--texto-37);
 }
 
 footer {
@@ -719,20 +738,24 @@ footer img {
         column-gap: 5rem;
     }
 
-    .bloque3__data h2 {
+    /* .bloque3__data h2 {
         font-size: 4rem;
-    }
+    } */
 
-    .bloque3__data .subtitle {
+    /* .bloque3__data .subtitle {
         font-size: 2.5rem;
-    }
+    } */
 
-    .bloque3__data p {
+    /* .bloque3__data p {
         font-size: 1.3rem;
-    }
+    } */
 
-    .bloque3__fecha span {
+    /* .bloque3__fecha span {
         font-size: 1.3rem;
+    } */
+
+    .bloque3__fecha {
+        margin-top: 2.5rem;
     }
 
     .formulario {
@@ -762,22 +785,49 @@ footer img {
     .bloque3, 
     .bloque5, 
     .bloque6, 
-    .bloque7,
-    footer {
+    .bloque7{
         padding: 7rem 3rem;
     }
+
+    .bloque3Container {
+        row-gap: 3.5rem;
+    }
+
     .bloque3Container,
     .bloque5Container, 
     .bloque6Container,
     .bloque7Container {
-        width: 66rem;
+        width: 71rem;
     }
-    .bloque5Container .bloque5__title,
+
+    .bloque6Container {
+        row-gap: 2rem;
+    }
+
+    /* .bloque5Container .bloque5__title,
     .bloque6Container .bloque5__title {
         font-size: 3rem;
+    } */
+
+    .bloque3__data {
+        max-width: 36rem;
     }
+
     .bloque5__wrapper {
         row-gap: 1rem;
+    }
+
+    .double__form input, .double__form select {
+        height: 2.7rem;
+    }
+
+    .formulario {
+        padding: 2.5rem 2rem;
+    }
+
+    .formulario h2,
+    .formulario h4 {
+        line-height: 2.2rem;
     }
     .bloque5__item h3 {
         width: 16rem;
@@ -787,17 +837,25 @@ footer img {
     .bloque5__item h4 {
         font-size: 1.6rem;
     } 
-    .bloque6Item__pregunta h4 {
+    /* .bloque6Item__pregunta h4 {
         font-size: 1.7rem;
-    }
+    } */
     .bloque6Item__respuesta {
         /* max-height: 50rem; */
     }
-    .bloque6Item__pregunta span {
+    /* .bloque6Item__pregunta span {
         font-size: 3rem;
     }
     .bloque6Item__respuesta p {
         font-size: 1.7rem;
+    } */
+
+    .bloque6Item__respuesta p {
+        padding: 2rem 0 1rem 0;
+    }
+
+    footer img {
+        width: 14rem;
     }
 }
 
@@ -831,7 +889,7 @@ footer img {
 
 @media (min-width: 1350px) {
     .bloque1Content__data {
-        width: 87vmax;
+        width: 85vmax;
     }
 }
 
@@ -859,38 +917,39 @@ footer img {
     .bloque7Container {
         width: 76rem;
     }
-    .bloque3__data h2 {
+    /* .bloque3__data h2 {
         font-size: 4.5rem;
-    }
-    .bloque3__data .subtitle {
+    } */
+    /* .bloque3__data .subtitle {
         font-size: 2.9rem;
-    }
-    .bloque3__data p {
+    } */
+    /* .bloque3__data p {
         font-size: 1.5rem;
-    }
-    .bloque3__fecha span {
+    } */
+    /* .bloque3__fecha span {
         font-size: 1.5rem;
-    }
+    } */
     .formulario {
         padding: 2.5rem 2rem;
     }
-    .formulario h2 {
-        font-size: 1.5rem;
-    }
-    .formulario h4 {
-        font-size: 1.4rem;
-    }
+
     .double__form input, .double__form select {
-        height: 2.3rem;
+        height: 3rem;
     }
-    .bloque3__disclaimer__inner p {
+    /* .bloque3__disclaimer__inner p {
         font-size: 1.4rem;
-    }
+    } */
 }
 
 @media (min-width: 1800px) {
     .bloque1Content__dataBottom p {
         margin-top: 11vw;
+    }
+}
+
+@media (min-width: 1900px) {
+    .bloque1Content__data {
+        width:85vmax;
     }
 }
 
