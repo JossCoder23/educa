@@ -45,4 +45,39 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+
+    const track = document.querySelector('.carousel__track');
+    const slides = document.querySelectorAll('.bloque5__item');
+    const dots = document.querySelectorAll('.pagination .dot');
+    const prevArrow = document.querySelector('.prev-arrow');
+    const nextArrow = document.querySelector('.next-arrow');
+
+    let currentIndex = 0;
+
+    const updateCarousel = (index) => {
+        // Desplazamos el riel. Cada item representa un 100% de la vista actual
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        // Actualizamos visualmente los puntitos de paginación
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    };
+
+    nextArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel(currentIndex);
+    });
+
+    prevArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel(currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel(currentIndex);
+        });
+    });
 });
