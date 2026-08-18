@@ -80,4 +80,37 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCarousel(currentIndex);
         });
     });
+
+    const cards = document.querySelectorAll('.bloque8Item');
+    
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Alterna la clase de giro en la tarjeta clicada
+            card.classList.toggle('is-flipped');
+            
+            // Opcional: Si quieres que al girar una, las demás se cierren automáticamente
+            cards.forEach(otherCard => {
+                if(otherCard !== card) {
+                    otherCard.classList.remove('is-flipped');
+                }
+            });
+        });
+    });
+
+    const cards2 = document.querySelectorAll('.bloque9Item');
+    
+    cards2.forEach(card => {
+        card.addEventListener('click', () => {
+            // Alterna la clase de giro en la tarjeta clicada
+            card.classList.toggle('is-flipped');
+            
+            // Opcional: Si quieres que al girar una, las demás se cierren automáticamente
+            cards2.forEach(otherCard => {
+                if(otherCard !== card) {
+                    otherCard.classList.remove('is-flipped');
+                }
+            });
+        });
+    });
+
 });

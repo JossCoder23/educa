@@ -14,13 +14,6 @@ html {
     --azul-claro: #2841dd;
     --naranja: #fe8512;
 
-    /* --texto-96: clamp(2.5rem, 1.8rem + 3.5vw, 6rem);
-    --texto-72: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
-    --texto-69: clamp(1.88rem, 1.39rem + 2.44vw, 4.31rem);
-    --texto-40: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
-    --texto-37: clamp(1.38rem, 1.19rem + 0.94vw, 2.31rem);
-    --texto-35: clamp(1.25rem, 1.06rem + 0.94vw, 2.19rem); */
-
     --texto-96: clamp(2rem, 1.5rem + 2.5vw, 4.5rem);
     --texto-72: clamp(1.75rem, 1.425rem + 1.625vw, 3.375rem);
     --texto-69: clamp(1.625rem, 1.3rem + 1.61vw, 3.23rem);
@@ -422,15 +415,22 @@ form .eleccion .form__election {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    width: 100%;
 }
 
 .bloque5Container .bloque5__title {
     font-size: var(--texto-96);
     font-family: "Source Serif 4", serif;
     font-style: italic;
-    line-height: 1.2;
+    line-height: 2.2rem;
     text-align: center;
     color: white;
+}
+
+.bloque5Container h4 {
+    color: white;
+    text-align: center;
+    font-size: var(--texto-35);
 }
 
 .bloque5Container .bloque5__title span {
@@ -442,14 +442,14 @@ form .eleccion .form__election {
 .bloque5__wrapper {
     display: flex;
     /* flex-direction: column; */
-    column-gap: 1rem;
+    /* column-gap: 1rem; */
     align-items: center;
     /* overflow: hidden; */
     justify-content: center;
 }
 
 .carousel__viewport {
-    width: 21rem; 
+    width: 13rem; 
     overflow: hidden;
 }
 
@@ -460,8 +460,12 @@ form .eleccion .form__election {
 
 .bloque5__item {
     display: flex;
-    width: 21rem;
+    width: 13rem;
     flex-shrink: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    /* row-gap: 1rem; */
 }
 
 .bloque5__item img {
@@ -477,7 +481,7 @@ form .eleccion .form__election {
     display: flex;
     flex-direction: column;
     row-gap: .5rem;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
 }
 
 .bloque5__wrapper span {
@@ -486,7 +490,7 @@ form .eleccion .form__election {
 }
 
 .bloque5__wrapper span img {
-    width: 3rem;
+    width: 2rem;
     cursor: pointer;
 }
 
@@ -530,7 +534,7 @@ form .eleccion .form__election {
 .bloque5__title {
     font-size: var(--texto-96);
     /* color: var(--azul); */
-    line-height: 1.2;
+    line-height: 2.2rem;
     font-family: "Source Serif 4", serif;
     font-style: italic;
     text-align: center;
@@ -621,6 +625,258 @@ form .eleccion .form__election {
     font-weight: 700;
     font-size: var(--texto-37);
     cursor: pointer;
+}
+
+.bloque8 {
+    background-color: #ebebeb;
+    padding: 3rem;
+}
+
+.bloque8Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.bloque-diferencia__title {
+    font-size: var(--texto-96);
+    line-height: 2.3rem;
+    font-family: "Source Serif 4", serif;
+    font-style: italic;
+    text-align: center;
+    color: var(--azul);
+}
+
+.bloque-diferencia__title span {
+    font-family: "Source Serif 4", serif;
+    font-style: italic;
+    color: var(--naranja);
+}
+
+.bloque8Carousel {
+    width: 100%;
+    perspective: 1000px;
+
+    /* Lo convertimos en un carrusel horizontal */
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem; /* Espacio extra para que no se corte feo abajo */
+    
+    /* Ocultamos la barra de scroll nativa para un look más limpio */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+.bloque8Carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.bloque8Item {
+    position: relative;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
+    display: grid;
+
+    /* En móvil, cada ítem ocupa casi toda la pantalla (90%) */
+    /* El flex-shrink: 0 evita que se aplasten entre sí */
+    flex: 0 0 90%; 
+    scroll-snap-align: center; /* Hace que se centre automáticamente al deslizar */
+}
+
+.bloque8Item.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.bloque8Item__front, 
+.bloque8Item__back {
+    grid-area: 1 / 1; /* Ambos elementos ocupan exactamente la misma celda del grid */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; /* Oculta la cara cuando está de espaldas */
+    
+    /* Tus estilos originales se mantienen */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bloque8Item__front {
+    height: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bloque8Item__front img {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+}
+
+.bloque8Item__front h3 {
+    position: absolute;
+    left: 1rem;
+    font-size: var(--texto-40);
+    color: white;
+}
+
+.bloque8Item__back {
+    height: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.bloque8Item__back img {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+}
+
+.bloque8Item__back h3 {
+    position: absolute;
+    padding: 0 .5rem;
+    font-size: var(--texto-40);
+    color: var(--azul);
+    text-align: center;
+}
+
+.bloque9 {
+    background-color: var(--azul);
+    padding: 3rem;
+}
+
+.bloque9Container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.bloque9Container h4 {
+    color: white;
+    text-align: center;
+    font-size: var(--texto-35);
+    font-weight: 400;
+}
+
+.bloque9-diferencia__title {
+    font-size: var(--texto-96);
+    line-height: 2.3rem;
+    font-family: "Source Serif 4", serif;
+    font-style: italic;
+    text-align: center;
+    color: white;
+}
+
+.bloque9-diferencia__title span {
+    font-family: "Source Serif 4", serif;
+    font-style: italic;
+    color: var(--naranja);
+}
+
+.bloque9Carousel {
+    width: 100%;
+    perspective: 1000px;
+
+    /* Lo convertimos en un carrusel horizontal */
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem; /* Espacio extra para que no se corte feo abajo */
+    
+    /* Ocultamos la barra de scroll nativa para un look más limpio */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+.bloque9Carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.bloque9Item {
+    position: relative;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    cursor: pointer;
+    display: grid;
+
+    /* En móvil, cada ítem ocupa casi toda la pantalla (90%) */
+    /* El flex-shrink: 0 evita que se aplasten entre sí */
+    flex: 0 0 90%; 
+    scroll-snap-align: center; /* Hace que se centre automáticamente al deslizar */
+}
+
+.bloque9Item.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.bloque9Item__front, 
+.bloque9Item__back {
+    grid-area: 1 / 1; /* Ambos elementos ocupan exactamente la misma celda del grid */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; /* Oculta la cara cuando está de espaldas */
+    
+    /* Tus estilos originales se mantienen */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bloque9Item__front {
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    justify-content: center;
+}
+
+.bloque9Item__front img {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+}
+
+.bloque9Item__front h3 {
+    position: absolute;
+    /* left: 1rem; */
+    font-size: var(--texto-40);
+    color: white;
+    bottom: 2rem;
+}
+
+.bloque9Item__front h3 span {
+    font-family: "Source Serif 4", serif;
+    font-style: italic;
+}
+
+.bloque9Item__back {
+    height: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.bloque9Item__back img {
+    object-fit: contain;
+    height: auto;
+    width: 100%;
+}
+
+.bloque9Item__back h3 {
+    position: absolute;
+    padding: 0 .5rem;
+    font-size: var(--texto-40);
+    color: var(--azul);
+    text-align: center;
 }
 
 footer {
