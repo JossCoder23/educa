@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-    <div style="position:relative;">
+    <div class="pucp-landing-wrapper">
         <div class="bloque1">
             <div class="bloque1Content">
                 <div class="bloque1Content__logo">
@@ -72,51 +72,150 @@
                     </div>
                     <div class="formulario">
                         <h2><b>Regístrate en nuestro evento</b> y asegura tu participación</h2>
-                        <h4>No te olvides de ingresar tus datos de manera correcta.</h4>
-                        <form>
+                        <h4>No te olvies de ingresar tus datos de manera correcta.</h4>
+                        <form class="bloque1Container__form" id="my-form-pregrado" method="POST">
                             <div class="eleccion">
                                 <h3>Soy un:</h3>
-                                <div class="form__election">
-                                    <div>
-                                        <input type="checkbox">
-                                        <h4>Estudiante</h4>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox">
-                                        <h4>Egresado</h4>
-                                    </div>
+                                <select id="soy" name="type-contact" required>
+                                    <option value="" disabled selected>- Seleccionar -</option>
+                                    <option value="Postulante">Estudiante o egresado</option>
+                                    <option value="Tutor, padre o madre de familia">Padre o apoderado</option>
+                                </select>
+                            </div>
+                            <!-- <div class="double__form">
+                                <input class="requerido" id="names" type="text" name="names" maxlength="40" required autocomplete="off" placeholder="Nombres" />
+                                <input class="requerido" id="paternal_surname" type="text" name="paternal_surname" maxlength="40" required autocomplete="off" placeholder="Apellido Paterno" />
+                            </div>
+                            <div class="double__form">
+                                <input class="requerido" id="maternal_surname" type="text" name="maternal_surname" maxlength="40" required autocomplete="off" placeholder="Apellido Materno" />
+                                <select class="requerido" id="type-document" name="type-document" required>
+                                    <option value="" disabled selected>Tipo de documento</option>
+                                    <option value="DNI">DNI</option>
+                                    <option value="Carné de Extranjería">Carnet de Extranjería</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                </select>
+                            </div>
+                            <div class="double__form">
+                                <input class="requerido" id="number-document" type="text" name="number-document" maxlength="40" required autocomplete="off" placeholder="Nro de documento" />
+                                <input class="requerido" id="email" type="text" name="email" maxlength="40" required autocomplete="off" placeholder="Correo" />
+                            </div>
+                            <div class="double__form">
+                                <input class="requerido" id="phone" type="tel" name="phone" maxlength="40" required autocomplete="off" placeholder="Celular" />
+                                <div class="form__container--school">
+                                    <input class="requerido" list="lista-colegios" id="search-colegio" type="text" placeholder="Busca tu colegio..." autocomplete="off" required>
+                                    <datalist id="lista-colegios"></datalist>
+                                    <input type="hidden" id="school-code" name="school" required>
                                 </div>
                             </div>
                             <div class="double__form">
-                                <input type="text" placeholder="Nombre">
-                                <input type="text" placeholder="Apellido Paterno">
+                                <select class="requerido" id="degree-study" name="degree-study" required>
+                                    <option value="" disabled selected>Año de egreso</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2025">2025</option>
+                                </select>
+                                <select class="requerido" id="career-1" name="career-1" required>
+                                    <option value="" disabled selected>Carrera de interés</option>
+                                    <option value="EDUCACIÓN INICIAL">Educación Inicial</option>
+                                    <option value="EDUCACIÓN PRIMARIA">Educación Primaria</option>
+                                    <option value="EDUCACIÓN SECUNDARIA">Educación Secundaria</option>
+                                </select>
+                            </div> -->
+                            
+                            <div id="contenedor-dinamico" style="display: none; flex-direction: column;">
+            
+                                <!-- SECCIÓN ESTUDIANTE -->
+                                <div id="seccion-estudiante">
+                                    <div class="header-acordeon" id="header-estudiante" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                        <h3 style="margin: 0;">Datos del Postulante</h3>
+                                        <span class="toggle-icon" id="toggle-estudiante" style="font-size: 24px; font-weight: bold; display: none;">+</span>
+                                    </div>
+                                    <div class="campos-desplegables" id="campos-estudiante" style="margin-top: 15px;">
+                                        <div class="double__form">
+                                            <input class="input-dinamico-estudiante" id="names" type="text" name="names" maxlength="40" autocomplete="off" placeholder="Nombres" />
+                                            <input class="input-dinamico-estudiante" id="paternal_surname" type="text" name="paternal_surname" maxlength="40" autocomplete="off" placeholder="Apellido Paterno" />
+                                        </div>
+                                        <div class="double__form">
+                                            <input class="input-dinamico-estudiante" id="maternal_surname" type="text" name="maternal_surname" maxlength="40" autocomplete="off" placeholder="Apellido Materno" />
+                                            <select class="input-dinamico-estudiante" id="type-document" name="type-document">
+                                                <option value="" disabled selected>Tipo de documento</option>
+                                                <option value="DNI">DNI</option>
+                                                <option value="Carné de Extranjería">Carnet de Extranjería</option>
+                                                <option value="Pasaporte">Pasaporte</option>
+                                            </select>
+                                        </div>
+                                        <div class="double__form">
+                                            <input class="input-dinamico-estudiante" id="number-document" type="text" name="number-document" maxlength="40" autocomplete="off" placeholder="Nro de documento" />
+                                            <input class="input-dinamico-estudiante" id="email" type="email" name="email" maxlength="40" autocomplete="off" placeholder="Correo" />
+                                        </div>
+                                        <div class="double__form">
+                                            <input class="input-dinamico-estudiante" id="phone" type="tel" name="phone" maxlength="40" autocomplete="off" placeholder="Celular" />
+                                            <div class="form__container--school" style="width: 100%;">
+                                                <input class="input-dinamico-estudiante" list="lista-colegios" id="search-colegio" type="text" placeholder="Busca tu colegio..." autocomplete="off">
+                                                <datalist id="lista-colegios"></datalist>
+                                                <input type="hidden" id="school-code" name="school">
+                                            </div>
+                                        </div>
+                                        <div class="double__form">
+                                            <select class="input-dinamico-estudiante" id="degree-study" name="degree-study">
+                                                <option value="" disabled selected>Año de egreso</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2025">2025</option>
+                                            </select>
+                                            <select class="input-dinamico-estudiante" id="career-1" name="career-1">
+                                                <option value="" disabled selected>Carrera de interés</option>
+                                                <option value="EDUCACIÓN INICIAL">Educación Inicial</option>
+                                                <option value="EDUCACIÓN PRIMARIA">Educación Primaria</option>
+                                                <option value="EDUCACIÓN SECUNDARIA">Educación Secundaria</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- SECCIÓN TUTOR / APODERADO -->
+                                <div id="seccion-tutor">
+                                    <div class="header-acordeon" id="header-tutor" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                                        <h3 id="titulo-tutor" style="margin: 0;">Datos del Padre o Apoderado</h3>
+                                        <span class="toggle-icon" id="toggle-tutor" style="font-size: 24px; font-weight: bold; display: none;">+</span>
+                                    </div>
+                                    <div class="campos-desplegables" id="campos-tutor">
+                                        <div class="double__form">
+                                            <input class="input-dinamico-tutor" id="tutor_names" type="text" name="tutor_names" maxlength="40" autocomplete="off" placeholder="Nombres del tutor"/>
+                                            <input class="input-dinamico-tutor" id="tutor-paternal-surname" type="text" name="tutor-paternal-surname" maxlength="40" autocomplete="off" placeholder="Apellido Paterno tutor"/>
+                                        </div>
+                                        <div class="double__form">
+                                            <select class="input-dinamico-tutor" id="tutor-type-document" name="tutor-type-document">
+                                                <option value="" disabled selected>Tipo de documento</option>
+                                                <option value="DNI">DNI</option>
+                                                <option value="Carné de Extranjería">Carnet de Extranjería</option>
+                                                <option value="Pasaporte">Pasaporte</option>
+                                            </select>
+                                            <input class="input-dinamico-tutor" id="tutor-number-document" type="text" name="tutor-number-document" maxlength="20" autocomplete="off" placeholder="Nro de documento tutor" />
+                                        </div>
+                                        <div class="double__form">
+                                            <input class="input-dinamico-tutor" id="tutor-phone" type="tel" name="tutor-phone" maxlength="9" autocomplete="off" placeholder="Celular tutor"/>
+                                            <input class="input-dinamico-tutor" id="tutor-email" type="email" name="tutor-email" maxlength="100" autocomplete="off" placeholder="Correo tutor"/>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
                             </div>
-                            <div class="double__form">
-                                <input type="text" placeholder="Apellido Materno">
-                                <input type="text" placeholder="Tipo de documento">
-                            </div>
-                            <div class="double__form">
-                                <input type="text" placeholder="Nro de documento">
-                                <input type="text" placeholder="Correo">
-                            </div>
-                            <div class="double__form">
-                                <input type="text" placeholder="Celular">
-                                <input type="text" placeholder="Selecciona un colegio">
-                            </div>
-                            <div class="double__form">
-                                <input type="text" placeholder="Año de Egreso">
-                                <input type="text" placeholder="Selecciona una carrera">
-                            </div>
+                            
                             <div class="authorization">
-                                <input type="checkbox" name="" id="">
+                                <input type="checkbox" required name="" id="">
                                 <p>Autorizo a la Pontificia Universidad Católica del Perú a utilizar mis datos personales para los fines mencionados. Ver autorización.*</p>
                             </div>
                             <div class="authorization">
-                                <input type="checkbox" name="" id="">
+                                <input type="checkbox" required name="" id="">
                                 <p>Autorizo a la Pontificia Universidad Católica del Perú a enviarme información sobre sus programas académicos.</p>
                             </div>
                             <div class="content__button">
-                                <button>Enviar mis datos</button>
+                                <button type="submit">Enviar mis datos</button>
                             </div>
                         </form>
                     </div>
